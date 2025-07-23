@@ -5,7 +5,7 @@ const TodoApp = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [inputValue, setInputValue] = useState('');
 
-  // Thêm task mới
+  
   const addTask = () => {
     if (inputValue.trim() !== '') {
       const newTask = {
@@ -18,31 +18,31 @@ const TodoApp = () => {
     }
   };
 
-  // Xử lý Enter key
+  
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       addTask();
     }
   };
 
-  // Toggle task status
+  
   const toggleTask = (id) => {
     setTasks(tasks.map(task => 
       task.id === id ? { ...task, active: !task.active } : task
     ));
   };
 
-  // Xóa task đơn lẻ
+  
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
-  // Xóa tất cả task completed
+  
   const deleteAllCompleted = () => {
     setTasks(tasks.filter(task => task.active));
   };
 
-  // Lọc tasks theo tab
+  
   const getFilteredTasks = () => {
     switch (activeTab) {
       case 'active':
@@ -59,10 +59,10 @@ const TodoApp = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-8 bg-white rounded-lg shadow-lg p-6">
-      {/* Header */}
+      
       <h1 className="text-3xl font-light text-center text-gray-800 mb-8"> tu đu list của Công Huân</h1>
 
-      {/* Tabs */}
+      
       <div className="flex border-b border-gray-200 mb-6">
         <button
           onClick={() => setActiveTab('all')}
